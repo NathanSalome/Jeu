@@ -13,16 +13,19 @@ function MotAleatoire(){
     return mots[motsAl];
 }
 
-let MotActu = span;
 
 btn.addEventListener("click", (event) => {
-    if(input === MotActu){
+    let MotActu = span.textContent
+    console.log(MotActu)
+    if(input.value === MotActu){
         score++
-        console.log(score)
+        console.log("Vrai")
         scoreSpan.innerHTML = `${score}`
+        span.innerHTML = `${MotAleatoire()}`
     }
     else{
         score++
         console.log("faux")
+        span.innerHTML = `${MotAleatoire()}`
     }
 });
